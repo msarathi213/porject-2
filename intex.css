@@ -1,0 +1,45 @@
+ul.HOME li{
+    font-size: larger;
+}
+ul {
+    display: inline;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li {
+    display: block;
+    float:right;
+    padding: 4px;
+    text-decoration:none;
+    overflow:auto
+}
+.home{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 400px;
+    transform: translate(-50%, -50%); 
+    background:whitesmoke;
+    color: black;
+    margin: 10px;
+    border-radius: 10px;
+}
+.Navigation{
+    background-color:rgb(230, 230, 238) ;
+    padding: 10px 10px;
+    border-radius: 10px 10px 1px 1px;
+    
+}
+.contact-message-list{
+    display: flex;
+    align-items: center;
+}
+.contact-message-image{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
