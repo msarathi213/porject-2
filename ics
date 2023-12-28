@@ -1,0 +1,159 @@
+<html>
+<title> ics employee dashboard </title>
+
+<body>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 20px;
+        }
+
+        table,
+        td {
+            text-align: center;
+        }
+    </style>
+
+</body>
+
+<script>
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.open("GET","ics.xml",false);
+    xmlhttp.send();
+    xmlDoc=xmlhttp.responseXML;
+    
+    document.write("<table><tr><th>DESCRIPTION</th><th>>MAIN CENTER<</th><th>MEDICAL COLLEGE</th><th>SULUR CENTER</th><th>CITY CENTER</th><th>KVP CENTER</th></tr></table>");
+    var x=xmlDoc.getElementsByTagName("ICS EMP DASHBOARD");
+    for (i=0;i<x.length;i++)
+      {
+      document.write("<tr><td>");
+      document.write(x[i].getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue);
+      document.write("</td><td>");
+      document.write(x[i].getElementsByTagName("MAIN CENTER")[0].childNodes[0].nodeValue);
+      document.write("</td></tr>");
+      document.write("<tr><td>");
+      document.write(x[i].getElementsByTagName("MEDICAL COLLEGE")[0].childNodes[0].nodeValue);
+      document.write("</td><td>");
+      document.write(x[i].getElementsByTagName("1TITSULUR CENTERLE")[0].childNodes[0].nodeValue);
+      document.write("</td></tr>");document.write("<tr><td>");
+      document.write(x[i].getElementsByTagName("CITY CENTER")[0].childNodes[0].nodeValue);
+      document.write("</td><td>");
+      document.write(x[i].getElementsByTagName("KVP CENTER")[0].childNodes[0].nodeValue);
+      document.write("</td></tr>");
+      }
+    document.write("</table>");
+    </script>
+    
+    </body>
+    </html>
+<!--<center>
+    <br>
+    <table>
+    <tr>
+    <th colspan='12'>ICS EMP DASHBOARD</th>
+    </tr>
+    <tr>
+    <th >DESCRIPTION</th>
+    <th colspan='2'>MAIN CENTER</th>
+    <th colspan='2'>MEDICAL COLLEGE</th>
+    <th colspan='2'>SULUR CENTER </th>
+    <th colspan='2'>CITY CENTER</th>
+    <th colspan='2'>KVP CENTER</th>
+    </tr>
+    <tr>
+    <th>d/w of emp<br>n/wof duty</th>
+    <td colspan='2'> 700<br>30 </td>
+    <td colspan='2'>300<br> 20</td>
+    <td colspan='2'>150<br>25</td>
+    <td colspan='2'>600<br>50</td>
+    <td colspan='2'>100<br>60</td>
+    </tr>
+    <tr>
+    <th >d/w of emp<br>n/wof duty</th>
+    <td colspan='2'>700 <br> 30</td>
+    <td colspan='2'>300<br> 20</td>
+    <td colspan='2'>150<br>25</td>
+    <td colspan='2'>600<br>50</td>
+    <td colspan='2'>100<br>60</td>
+    </tr>
+    <tr>
+    <th>day shift<br>pres<br> abs </th>
+    <td>present<br>300</th><td>absent<br>30</td>
+    <td>present<br>500</th><td>absent<br>20</td>
+    <td>present<br>700</th><td>absent<br>50</td>
+    <td>present<br>800</th><td>absent<br>20</td>
+    <td>present<br>900</th><td>absent<br>10</td>
+    </tr><tr>
+    <th >night shift<br>pres<br> abs </th>
+    <td>present<br>300</th><td>absent<br>30</td>
+    <td>present<br>500</th><td>absent<br>20</td>
+    <td>present<br>700</th><td>absent<br>50</td>
+    <td>present<br>800</th><td>absent<br>20</td>
+    <td>present<br>900</th><td>absent<br>10</td>
+    </tr><tr>
+    <th >category<br>pres<br>abs</th>
+    <td>present<br>300</th><td>absent<br>30</td>
+    <td>present<br>500</th><td>absent<br>20</td>
+    <td>present<br>700</th><td>absent<br>50</td>
+    <td>present<br>800</th><td>absent<br>20</td>
+    <td>present<br>900</th><td>absent<br>10</td>
+    </tr>
+    </center>
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+    <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE>d/w of emp<br>n/wof duty</MEDICAL COLLEGE>
+    <SULUR CENTER>day shift<br>pres<br> abs  </SULUR CENTER>
+    <CITY CENTER> night shift<br>pres<br> abs  </CITY CENTER>
+    <KVP CENTER>category<br>pres<br>abs</KVP CENTER>
+
+    <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 150<br>25 </SULUR CENTER>
+    <CITY CENTER> 600<br>50 </CITY CENTER>
+    <KVP CENTER> 100<br>60 </KVP CENTER>
+
+   <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 150<br>25 </SULUR CENTER>
+    <CITY CENTER> 600<br>50 </CITY CENTER>
+    <KVP CENTER> 100<br>60 </KVP CENTER>
+
+    <DESCRIPTION>day shift<br>pres<br> abs </DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 150<br>25 </SULUR CENTER>
+    <CITY CENTER> 600<br>50 </CITY CENTER>
+    <KVP CENTER> 100<br>60 </KVP CENTER>
+    
+    <DESCRIPTION>night shift<br>pres<br> abs </DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 150<br>25 </SULUR CENTER>
+    <CITY CENTER> 600<br>50 </CITY CENTER>
+    <KVP CENTER> 100<br>60 </KVP CENTER>
+
+     <DESCRIPTION>category<br>pres<br>abs</DESCRIPTION>
+    <MAIN CENTER> 700<br>30 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 150<br>25 </SULUR CENTER>
+    <CITY CENTER> 600<br>50 </CITY CENTER>
+    <KVP CENTER> 100<br>60 </KVP CENTER>
+</xml>  
