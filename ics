@@ -1,8 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<demo>
+<ICS EMP DASHBOARD>
+    <DESCRIPTION>d/w of empn/wof duty</DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE>d/w of empn/wof duty</MEDICAL COLLEGE>
+    <SULUR CENTER>day shiftpres abs  </SULUR CENTER>
+    <CITY CENTER> night shiftpres abs  </CITY CENTER>
+    <KVP CENTER>categorypresabs</KVP CENTER>
+</ICS EMP DASHBOARD>
+</demo>
+<!--<DESCRIPTION>d/w of empn/wof duty</DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE>d/w of empn/wof duty</MEDICAL COLLEGE>
+    <SULUR CENTER>day shiftpres abs  </SULUR CENTER>
+    <CITY CENTER> night shiftpres abs  </CITY CENTER>
+    <KVP CENTER>categorypresabs</KVP CENTER>
+</ICS EMP DASHBOARD> 
+
+<ICS EMP DASHBOARD>  
+    <DESCRIPTION>d/w of empn/wof duty</DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 15025 </SULUR CENTER>
+    <CITY CENTER> 60050 </CITY CENTER>
+    <KVP CENTER> 10060 </KVP CENTER>
+</ICS EMP DASHBOARD> 
+
+<ICS EMP DASHBOARD> 
+    <DESCRIPTION>d/w of empn/wof duty</DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 15025 </SULUR CENTER>
+    <CITY CENTER> 60050 </CITY CENTER>
+    <KVP CENTER> 10060 </KVP CENTER>
+</ICS EMP DASHBOARD> 
+
+<ICS EMP DASHBOARD> 
+    <DESCRIPTION>day shiftpres abs </DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 15025 </SULUR CENTER>
+    <CITY CENTER> 60050 </CITY CENTER>
+    <KVP CENTER> 10060 </KVP CENTER>
+</ICS EMP DASHBOARD> 
+    
+<ICS EMP DASHBOARD>
+    <DESCRIPTION>night shiftpres abs </DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 15025 </SULUR CENTER>
+    <CITY CENTER> 60050 </CITY CENTER>
+    <KVP CENTER> 10060 </KVP CENTER>
+</ICS EMP DASHBOARD> 
+
+<ICS EMP DASHBOARD> 
+    <DESCRIPTION>categorypresabs</DESCRIPTION>
+    <MAIN CENTER> 70030 </MAIN CENTER>
+    <MEDICAL COLLEGE> 300 20 </MEDICAL COLLEGE>
+    <SULUR CENTER> 15025 </SULUR CENTER>
+    <CITY CENTER> 60050 </CITY CENTER>
+    <KVP CENTER> 10060 </KVP CENTER>
+</ICS EMP DASHBOARD-->
+</xml>
+
+
+
+
 <html>
 <title> ics employee dashboard </title>
 
 <body>
     <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+
+    <body>
+        <button type="button" onclick="loadXMLDoc()">Get ICS EMP DASHBOARD</button>
+        <br><br>
+        <table id="demo"></table>
+
+        <script>
+            function loadXMLDoc() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this);
+                    }
+                };
+                xmlhttp.open("GET", "ics.xml", true);
+                xmlhttp.send();
+            }
+            function myFunction(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table = "<tr><th>DESCRIPTION</th><th>MAIN CENTER</th><th>MEDICAL COLLEGE</th><th>SULUR CENTER</th><th>CITY CENTER</th><th>KVP CENTER</th></tr>";
+                var x = xmlDoc.getElementsByTagName("ICS EMP DASHBOARD");
+                for (i = 0; i < x.length; i++) {
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        x[i].getElementsByTagName("MAIN CENTER")[0].childNodes[0].nodeValue +
+                        "</td></tr>";
+                    x[i].getElementsByTagName("MEDICAL COLLEGE")[0].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        x[i].getElementsByTagName("SULUR CENTER")[0].childNodes[0].nodeValue +
+                        "</td></tr>";
+                    x[i].getElementsByTagName("CITY CENTER")[0].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        x[i].getElementsByTagName("KVP CENTER")[0].childNodes[0].nodeValue +
+                        "</td></tr>";
+                }
+                document.getElementById("demo").innerHTML = table;
+            }
+        </script>
+    </body>
+
+</html>
+
+<!--
+       <style>
         table,
         th,
         td {
@@ -16,9 +142,6 @@
             text-align: center;
         }
     </style>
-
-</body>
-
 <script>
     if (window.XMLHttpRequest)
       {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -53,10 +176,8 @@
       }
     document.write("</table>");
     </script>
-    
-    </body>
-    </html>
-<!--<center>
+      
+<center>
     <br>
     <table>
     <tr>
@@ -109,51 +230,3 @@
     <td>present<br>900</th><td>absent<br>10</td>
     </tr>
     </center>
-
-
-
-
-
-<?xml version="1.0" encoding="UTF-8"?>
-    <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE>d/w of emp<br>n/wof duty</MEDICAL COLLEGE>
-    <SULUR CENTER>day shift<br>pres<br> abs  </SULUR CENTER>
-    <CITY CENTER> night shift<br>pres<br> abs  </CITY CENTER>
-    <KVP CENTER>category<br>pres<br>abs</KVP CENTER>
-
-    <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
-    <SULUR CENTER> 150<br>25 </SULUR CENTER>
-    <CITY CENTER> 600<br>50 </CITY CENTER>
-    <KVP CENTER> 100<br>60 </KVP CENTER>
-
-   <DESCRIPTION>d/w of emp<br>n/wof duty</DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
-    <SULUR CENTER> 150<br>25 </SULUR CENTER>
-    <CITY CENTER> 600<br>50 </CITY CENTER>
-    <KVP CENTER> 100<br>60 </KVP CENTER>
-
-    <DESCRIPTION>day shift<br>pres<br> abs </DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
-    <SULUR CENTER> 150<br>25 </SULUR CENTER>
-    <CITY CENTER> 600<br>50 </CITY CENTER>
-    <KVP CENTER> 100<br>60 </KVP CENTER>
-    
-    <DESCRIPTION>night shift<br>pres<br> abs </DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
-    <SULUR CENTER> 150<br>25 </SULUR CENTER>
-    <CITY CENTER> 600<br>50 </CITY CENTER>
-    <KVP CENTER> 100<br>60 </KVP CENTER>
-
-     <DESCRIPTION>category<br>pres<br>abs</DESCRIPTION>
-    <MAIN CENTER> 700<br>30 </MAIN CENTER>
-    <MEDICAL COLLEGE> 300<br> 20 </MEDICAL COLLEGE>
-    <SULUR CENTER> 150<br>25 </SULUR CENTER>
-    <CITY CENTER> 600<br>50 </CITY CENTER>
-    <KVP CENTER> 100<br>60 </KVP CENTER>
-</xml>  
